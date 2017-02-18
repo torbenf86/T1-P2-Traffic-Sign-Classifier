@@ -20,7 +20,7 @@ The goals / steps of this project are the following:
 [image1]: ./examples/barplot.png "Visualization"
 [image3]: ./examples/grayscale.jpg "Grayscaling"
 [image2]: ./examples/colored.jpg "colored"
-[image4]: ./examples/einbahnstrasse.jpg "One-Way"
+[image4]: ./examples/Einbahnstrasse.jpg "One-Way"
 [image5]: ./examples/stop.jpg "Stop"
 [image6]: ./examples/vorfahrt.jpg "Priority"
 [image7]: ./examples/Do-Not-Enter.jpg "Do not enter"
