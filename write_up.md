@@ -17,19 +17,14 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./barplot.png "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
-[image9]: ./examples/Einbahnstrasse.jpg "One-Way-Only"
-[image10]: ./examples/stop.jpg "Stop"
-[image11]: ./examples/vorfahrt.jpg "Priority"
-[image12]: ./examples/Do-Not-Enter.jpg "Do not enter"
-[image13]: ./examples/vorfahrt-kreuzung.jpg "Right-Of-Way"
+[image1]: ./examples/barplot.png "Visualization"
+[image3]: ./examples/grayscale.jpg "Grayscaling"
+[image2]: ./examples/colored.jpg "colored"
+[image5]: ./examples/stop.jpg "Stop"
+[image6]: ./examples/vorfahrt.jpg "Priority"
+[image7]: ./examples/Do-Not-Enter.jpg "Do not enter"
+[image8]: ./examples/vorfahrt-kreuzung.jpg "Right-Of-Way"
+
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -39,7 +34,7 @@ The goals / steps of this project are the following:
 
 ####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+You're reading it! and here is a link to my [project code](https://github.com/torbenf86/T1-P2-Traffic-Sign-Classifier/Traffic_Sign_Classifier.ipynb)
 
 ###Data Set Summary & Exploration
 
@@ -61,7 +56,7 @@ signs data set:
 The code for this step is contained in the third code cell of the IPython notebook.  
 
 Here is an exploratory visualization of the data set. It is a bar chart showing the number of training images for each label. The label number corresponds to a specific traffic sign, which can be found in this csv-file:
-[project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+[project code](signnames.csv)
 
 
 ![alt text][image1]
@@ -77,6 +72,8 @@ As a first step, I decided to convert the images to grayscale because the provid
 Here is an example of a traffic sign image before and after grayscaling.
 
 ![alt text][image2]
+![alt text][image3]
+
 
 As a last step, I normalized the image data to [-1,1] by using a normalizing function of OpenCV. 
 
@@ -99,10 +96,14 @@ My final model consisted of the following layers:
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 14x14x16 				|
 | Convolution 3x3	    | 1x1 stride, valid padding, outputs 10x10x32   |
+| RELU					|												|
+| Local Response Normalization | |
 | Max pooling	      	| 2x2 stride,  outputs 5x5x16 				|
 | Flattening | outputs 800
 | Fully connected		| outputs 800      									|
+| RELU					|												|
 | Fully connected		| outputs 400      									|
+| RELU					|												|
 | Fully connected		| outputs 43      									|
  
 
@@ -118,21 +119,26 @@ To train the model, I used an AdamOptimizer like shown in the units of Udacity. 
 The code for calculating the accuracy of the model is located in the ninth cell of the Ipython notebook.
 
 My final model results were:
+
 * training set accuracy of 99%
 * validation set accuracy of up to 97% 
 * test set accuracy of 94%
 
-If an iterative approach was chosen:
+
 * What was the first architecture that was tried and why was it chosen?
+
 I chose LeNet as a base architecture since it was introduced in the course, and seemed to be a good starting point. 
 
 * What were some problems with the initial architecture?
+
 The validation accuracy was stuck at about 90%, while the training accuracy was at 100%. This seemed to indicate an overfitting of the network.
 
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to over fitting or under fitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-I added two dropout layers after in the fully connected layers. Additionally, I changed the input channels of the first two convolutional layers from (6,16) to (16,32). This led to also to larger input of 800 at the first fully connected layer. Therefore I added another fully connected layer. This seemed to improve the network since I obtained at validation accuracy of 97% and test accuracy of 94%.
+
+I added two dropout layers after in the fully connected layers and added a normalization to prevent overfitting. Additionally, I changed the input channels of the first two convolutional layers from (6,16) to (16,32). This led to also to larger input of 800 at the first fully connected layer. Therefore I added another fully connected layer. This seemed to improve the network since I obtained at validation accuracy of 97% and test accuracy of 94%.
 
 * Which parameters were tuned? How were they adjusted and why?
+
 I tuned the learning rate, and the initialization of the weights because they have a big influence how the algorithm achieves the minimum of the loss. 
 
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
@@ -172,10 +178,15 @@ However, I would have expected that the model detects a sign which might be simi
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
 The following links show bar plot of the predictions for each sign.
-Sign 1 (One-Way) : ![alt text][image9]
-Sign 2 (Stop) : ![alt text][image10]
-Sign 3 (Priority) : ![alt text][image11]
-Sign 4 (No Entry) : ![alt text][image12]
-Sign 5 (Right-Of-Way) :![alt text][image13]
+Sign 1 (One-Way) : 
+![alt text][image9]
+Sign 2 (Stop) : 
+![alt text][image10]
+Sign 3 (Priority) : 
+![alt text][image11]
+Sign 4 (No Entry) : 
+![alt text][image12]
+Sign 5 (Right-Of-Way) :
+![alt text][image13]
 
 
