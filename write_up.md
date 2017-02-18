@@ -90,7 +90,7 @@ My final training set had 34799 number of images. My validation set and test set
 
 ####3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
-The code for my final model is located in the seventh cell of the ipython notebook. 
+The code for my final model is located in the fifth cell of the ipython notebook. 
 
 My final model consisted of the following layers:
 
@@ -121,7 +121,7 @@ To train the model, I used an AdamOptimizer like shown in the units of Udacity. 
 
 ####5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
-The code for calculating the accuracy of the model is located in the ninth cell of the Ipython notebook.
+The code for calculating the accuracy of the model is located in the seventh cell of the Ipython notebook.
 
 My final model results were:
 
@@ -132,7 +132,7 @@ My final model results were:
 
 * What was the first architecture that was tried and why was it chosen?
 
-I chose LeNet as a base architecture since it was introduced in the course, and seemed to be a good starting point. 
+I chose LeNet-5 as a base architecture since it was introduced in the course, and seemed to be a good starting point. 
 
 * What were some problems with the initial architecture?
 
@@ -161,7 +161,7 @@ The first image might be difficult to classify because it is not part of the tra
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
-The code for making predictions on my final model is located in the tenth cell of the Ipython notebook.
+The code for making predictions on my final model is located in the eleventh cell of the Ipython notebook.
 
 Here are the results of the prediction:
 
@@ -180,7 +180,7 @@ However, I would have expected that the model detects a sign which might be simi
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+This part is treated in the last cell of the notebook. 
 
 The following links show bar plot of the predictions for each sign.
 Sign 1 (One-Way) : 
