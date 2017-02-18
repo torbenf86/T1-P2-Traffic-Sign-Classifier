@@ -20,11 +20,16 @@ The goals / steps of this project are the following:
 [image1]: ./examples/barplot.png "Visualization"
 [image3]: ./examples/grayscale.jpg "Grayscaling"
 [image2]: ./examples/colored.jpg "colored"
+[image4]: ./examples/einbahnstrasse.jpg "One-Way"
 [image5]: ./examples/stop.jpg "Stop"
 [image6]: ./examples/vorfahrt.jpg "Priority"
 [image7]: ./examples/Do-Not-Enter.jpg "Do not enter"
 [image8]: ./examples/vorfahrt-kreuzung.jpg "Right-Of-Way"
-
+[image9]: ./examples/prob1.png "prob1"
+[image10]: ./examples/prob2.png "prob2"
+[image11]: ./examples/prob3.png "prob3"
+[image12]: ./examples/prob4.png "prob4"
+[image13]: ./examples/prob5.png "prob5"
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
