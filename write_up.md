@@ -184,14 +184,23 @@ This part is treated in the last cell of the notebook.
 
 The following links show bar plot of the predictions for each sign.
 Sign 1 (One-Way) : 
+
 ![alt text][image9]
+
 Sign 2 (Stop) : 
+
 ![alt text][image10]
+
 Sign 3 (Priority) : 
+
 ![alt text][image11]
+
 Sign 4 (No Entry) : 
+
 ![alt text][image12]
+
 Sign 5 (Right-Of-Way) :
 ![alt text][image13]
+
 
 
